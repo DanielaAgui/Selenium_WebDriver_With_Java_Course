@@ -20,5 +20,5 @@ public class FrameTest extends BaseTests {
         editorPage.increaseIndent();
 
         assertEquals(editorPage.getTextFromEditor(), text1 + text2, "Text is incorrect");
-    }
+   }
 }

@@ -13,7 +13,7 @@ public class WysiwygEditorPage {
     //Localizador del área de texto
     private By textArea = By.xpath("//*[@id=\"tinymce\"]");
     //Localizador del botón de sangría
-    private By indentButton = By.xpath("/html/body/div[4]/div/div/div[4]/button[2]");
+    private By indentButton = By.cssSelector("[aria-label=\"Increase indent\"]");
 
     public WysiwygEditorPage(WebDriver driver) {
         this.driver = driver;
@@ -24,6 +24,7 @@ public class WysiwygEditorPage {
     }
 
     public void switchToMainArea() {
+        //Cambia al padre del frame actual
         driver.switchTo().parentFrame();
     }
 
@@ -57,8 +58,6 @@ public class WysiwygEditorPage {
     }
 
     public void increaseIndent() {
-        switchToEditArea();
-        driver.findElement(textArea).click();
         driver.findElement(indentButton).click();
     }
 }

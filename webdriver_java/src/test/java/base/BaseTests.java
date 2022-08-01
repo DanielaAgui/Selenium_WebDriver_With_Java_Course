@@ -7,6 +7,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import pages.HomePage;
 
+import java.util.concurrent.TimeUnit;
+
 public class BaseTests {
 
     private WebDriver driver;
@@ -18,6 +20,10 @@ public class BaseTests {
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
         driver = new ChromeDriver();
+
+        //Proporciona un tiempo de espera entre cada paso de prueba
+        //driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
         //Volvemos a la página principal
         goHome();
 

@@ -72,6 +72,11 @@ public class HomePage {
         return new FramesPage(driver);
     }
 
+    public DynamicLoadingPage clickDynamicLoading() {
+        clickLink("Dynamic Loading");
+        return new DynamicLoadingPage(driver);
+    }
+
     //Creamos un método genérico para dar click en cualquier opción
     private void clickLink(String linkText) {
         driver.findElement(By.linkText(linkText)).click();

@@ -1,7 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriver;;
 
 public class NestedFramesPage {
 
@@ -16,7 +16,8 @@ public class NestedFramesPage {
     }
 
     public void switchToParentFrame () {
-        driver.switchTo().parentFrame();
+        //Para cambiar entre iframes y la página principal
+        driver.switchTo().defaultContent();
     }
 
     public void SwitchToFrameTop() {
