@@ -35,7 +35,7 @@ public class WysiwygEditorPage {
         WebElement element = driver.findElement(textArea);
         Actions actions = new Actions(driver);
         //Acción con el mouse de doble click
-        actions.moveToElement(element).doubleClick();
+        actions.moveToElement(element).doubleClick().perform();
         //Buscamos el área de texto y la limpiamos
         driver.findElement(textArea).clear();
         //Volvemos al área principal fuera del frame

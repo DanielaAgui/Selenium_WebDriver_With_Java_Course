@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.ITestResult;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -53,10 +54,10 @@ public class BaseTests {
     }
 
     //Se ejecuta después de terminar todos los tests
-    /*@AfterClass
+    @AfterClass
     public void tearDown() {
         driver.quit();
-    }*/
+    }
 
     //Se ejecuta después de terminar cada método
     @AfterMethod
