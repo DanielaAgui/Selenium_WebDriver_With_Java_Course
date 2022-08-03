@@ -76,6 +76,8 @@ public class BaseTests {
         }
     }
 
+
+
     //Devuelve la nueva página
     public WindowManager getWindowManager() {
         return new WindowManager(driver);
