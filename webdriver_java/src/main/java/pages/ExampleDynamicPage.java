@@ -23,20 +23,20 @@ public class ExampleDynamicPage {
     public void clickStart() {
         driver.findElement(startButton).click();
         //Creamos una espera en segundos para que se realice el siguiente paso hasta cumplir una condición
-        //WebDriverWait wait = new WebDriverWait(driver, 5);
+        WebDriverWait wait = new WebDriverWait(driver, 5);
         //Establecemos la condición a esperar
-        //wait.until(ExpectedConditions.invisibilityOf(driver.findElement(loadingIndicator)));
+        wait.until(ExpectedConditions.invisibilityOf(driver.findElement(loadingIndicator)));
 
         //Definimos una FluentWait
-        FluentWait wait = new FluentWait(driver)
+        /*FluentWait wait = new FluentWait(driver)
                 //Tiempo de espera máximo para esperar una condición
                 .withTimeout(Duration.ofSeconds(5))
                 //Frecuencia con la que vamos a verificar que se cumpla la condición
                 .pollingEvery(Duration.ofSeconds(1))
                 //Especificar que excepciones ignorar
-                .ignoring(NoSuchElementException.class);
+                .ignoring(NoSuchElementException.class);*/
         //Establecemos la condición que vamos a esperar
-        wait.until(ExpectedConditions.invisibilityOf(driver.findElement(loadingIndicator)));
+        //wait.until(ExpectedConditions.invisibilityOf(driver.findElement(loadingIndicator)));
     }
 
     public String getLoadedText() {
