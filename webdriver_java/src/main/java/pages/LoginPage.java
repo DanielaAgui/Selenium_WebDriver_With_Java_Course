@@ -19,10 +19,11 @@ public class LoginPage {
 
     //Creamos métodos para interactuar con cada campo
     public void setUsername(String username) {
-        //Localizamos el campo y escribimos en él (sendkeys)
+        //Localizamos el campo y escribimos el usuario
         driver.findElement(usernameField).sendKeys(username);
     }
 
+    //Localizamos el elemento y escribimos la contraseña
     public void setPassword(String password) {
         driver.findElement(passwordField).sendKeys(password);
     }

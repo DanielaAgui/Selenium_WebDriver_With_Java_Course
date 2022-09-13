@@ -9,6 +9,7 @@ public class AcceptAlertTest extends BaseTests {
 
     @Test
     public void testAcceptAlert() {
+        //Creamos una página nueva desde la homepage
         var alertsPage = homePage.clickJavaScriptAlerts();
         alertsPage.triggerAlert();
         alertsPage.acceptButton();

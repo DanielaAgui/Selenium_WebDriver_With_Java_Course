@@ -15,15 +15,19 @@ public class ContextMenuPage {
     }
 
     public void clikMenuBox() {
+        //Buscamos el elemento
         WebElement box = driver.findElement(menuBox);
         Actions actions = new Actions(driver);
+        //Damos click derecho sobre el elemento
         actions.contextClick(box).perform();
     }
 
+    //Obtenemos el texto de la alerta
     public String getAlertText() {
         return driver.switchTo().alert().getText();
     }
 
+    //Click en el botón aceptar
     public void clickAcceptButton() {
         driver.switchTo().alert().accept();
     }

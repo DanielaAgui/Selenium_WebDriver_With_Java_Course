@@ -15,7 +15,7 @@ public class InfiniteScrollPage {
     }
 
     public void scrollToParagraph(int index) {
-        //Función para hacer scroll de la ventana hasta [o (horizontal) - bejar hasta la altura del elemento (vertical)]
+        //Función para hacer scroll de la ventana hasta [0 (horizontal) - bajar hasta la altura del elemento (vertical)]
         String script = "window.scrollTo(0, document.body.scrollHeight)";
         //Objeto del JsExecuter
         var jsExecuter = ((JavascriptExecutor)driver);

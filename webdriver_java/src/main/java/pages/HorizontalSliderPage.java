@@ -16,11 +16,14 @@ public class HorizontalSliderPage {
     }
 
     public void moveSlider() {
+        //Buscamos el elemento
         WebElement element = driver.findElement(slider);
         Actions actions = new Actions(driver);
+        //Damos click en el slider según coordenadas específicas
         actions.dragAndDropBy(element, 30, 30).perform();
     }
 
+    //Obtenemos el texto del rango
     public String getRange() {
         return driver.findElement(range).getText();
     }

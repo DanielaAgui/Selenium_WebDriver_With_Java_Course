@@ -45,7 +45,6 @@ public class AlertsPage {
     }
 
     //Cambia a la ventana de la alerta y enviamos un texto en el input
-
     public void setInput(String text) {
         driver.switchTo().alert().sendKeys(text);
     }

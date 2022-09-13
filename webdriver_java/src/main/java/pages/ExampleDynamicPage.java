@@ -25,7 +25,7 @@ public class ExampleDynamicPage {
         //Creamos una espera en segundos para que se realice el siguiente paso hasta cumplir una condición
         WebDriverWait wait = new WebDriverWait(driver, 5);
         //Establecemos la condición a esperar
-        wait.until(ExpectedConditions.invisibilityOf(driver.findElement(loadingIndicator)));
+        wait.until(ExpectedConditions.invisibilityOf(driver.findElement(loadingIndicator))); //Esperar la invisibilidad de un elemento
 
         //Definimos una FluentWait
         /*FluentWait wait = new FluentWait(driver)
@@ -34,9 +34,9 @@ public class ExampleDynamicPage {
                 //Frecuencia con la que vamos a verificar que se cumpla la condición
                 .pollingEvery(Duration.ofSeconds(1))
                 //Especificar que excepciones ignorar
-                .ignoring(NoSuchElementException.class);*/
+                .ignoring(NoSuchElementException.class);
         //Establecemos la condición que vamos a esperar
-        //wait.until(ExpectedConditions.invisibilityOf(driver.findElement(loadingIndicator)));
+        wait.until(ExpectedConditions.invisibilityOf(driver.findElement(loadingIndicator)));*/
     }
 
     public String getLoadedText() {

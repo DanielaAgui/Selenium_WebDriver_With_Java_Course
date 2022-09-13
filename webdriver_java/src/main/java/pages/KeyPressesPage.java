@@ -14,7 +14,7 @@ public class KeyPressesPage {
         this.driver = driver;
     }
 
-    //Encuentra el elemento input y escribe en él
+    //Encuentra el elemento input y escribe un texto pasado por parámetro
     public void enterText(String text) {
         driver.findElement(inputField).sendKeys(text);
     }

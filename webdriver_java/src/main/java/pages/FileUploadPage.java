@@ -18,9 +18,9 @@ public class FileUploadPage {
         driver.findElement(uploadButton).click();
     }
 
-    //Método que recibe un string con el absolutepath del archivo a subir
+    //Método que recibe un string con el path absoluto del archivo a subir
     public void uploadFile(String absolutePathFile) {
-        //Buscamos el input y escribe el path de la imagen
+        //Buscamos el elemento input y escribe el path de la imagen
         driver.findElement(inputField).sendKeys(absolutePathFile);
         clickUploadButton();
     }

@@ -16,12 +16,11 @@ public class HoversPage {
     }
 
     /**
-     *
      * @param index starts at 1
      */
     public FigureCaption hoverOverFigure(int index) {
-        //Creamos un objeto del elemento a buscar y lo buscamos según índice (varios del mismo)
-        WebElement figure = driver.findElements(figureBox).get(index - 1);
+        //Creamos un objeto del elemento a buscar y lo buscamos según índice
+        WebElement figure = driver.findElements(figureBox).get(index - 1); //Índice menos 1 ya que en HTML los índices comienzan desde 1
 
         //Objeto Actions para simular acciones del usuario, inicializamos con el driver
         Actions actions = new Actions(driver);
@@ -44,7 +43,7 @@ public class HoversPage {
 
         //Método que verifica si el pie de foto sale al pararnos sobre la foto
         public boolean isCaptionDisplayed() {
-            //Devuelve un booleano
+            //Verifica si un elemento está presente y se muestra, devuelve un booleano
             return caption.isDisplayed();
         }
 
@@ -53,7 +52,7 @@ public class HoversPage {
             return caption.findElement(header).getText();
         }
 
-        //Método que devuelve el link del pie de página, por medio de su atributo
+        //Método que devuelve el link del pie de página, por medio de un atributo
         public String getLink() {
             return caption.findElement(link).getAttribute("href");
         }

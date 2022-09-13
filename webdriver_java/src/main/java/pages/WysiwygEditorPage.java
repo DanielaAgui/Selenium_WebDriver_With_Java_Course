@@ -19,6 +19,7 @@ public class WysiwygEditorPage {
         this.driver = driver;
     }
 
+    //Cambiamos al frame necesario
     private void switchToEditArea() {
         driver.switchTo().frame(editorIframeId);
     }
@@ -34,7 +35,7 @@ public class WysiwygEditorPage {
         //Convertimos el área de texto en un WebElement
         WebElement element = driver.findElement(textArea);
         Actions actions = new Actions(driver);
-        //Acción con el mouse de doble click
+        //Acción con el mousse de doble click
         actions.moveToElement(element).doubleClick().perform();
         //Buscamos el área de texto y la limpiamos
         driver.findElement(textArea).clear();
@@ -42,21 +43,27 @@ public class WysiwygEditorPage {
         switchToMainArea();
     }
 
-    //Establece el texto en el área de texto
     public void setTextArea(String text) {
+        //Cambiamos al área del texto
         switchToEditArea();
+        //Escribimos el texto
         driver.findElement(textArea).sendKeys(text);
+        //Cambiamos al área principal
         switchToMainArea();
     }
 
-    //Obtenemos el texto escrito en el área de texto
     public String getTextFromEditor() {
+        //Cambiamos al área de texto
         switchToEditArea();
+        //Devolvemos el texto escrito en una variable
         String text = driver.findElement(textArea).getText();
+        //Cambiamos al área principal
         switchToMainArea();
+        //Retornamos el texto
         return text;
     }
 
+    //Click en el botón para indentación
     public void increaseIndent() {
         driver.findElement(indentButton).click();
     }

@@ -11,7 +11,9 @@ public class HorizontalSliderTest extends BaseTests {
     public void TestHorizontalSlider() {
         var horizontalSliderPage = homePage.clickHorizontalSlider();
 
+        //Movemos el slider
         horizontalSliderPage.moveSlider();
+        //Verificamos que el rango generado sea igual al esperado
         assertEquals(horizontalSliderPage.getRange(), "4");
     }
 }

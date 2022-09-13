@@ -13,9 +13,9 @@ public class DropdownTest extends BaseTests {
         //Creamos el objeto de la página y entramos
         var dropDownPage = homePage.clickDropdown();
 
-        //Creamos la variable a testear
+        //Creamos la opción a seleccinar
         String option = "Option 1";
-        //Seleccionamos la opción
+        //Seleccionamos la opción anterior
         dropDownPage.selectFromDropdown(option);
         //Variable que crea una lista con las opciones seleccionadas
         var selectedOptions = dropDownPage.getSelectedOptions();

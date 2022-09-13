@@ -13,6 +13,7 @@ public class ForgotPasswordPage {
         this.driver = driver;
     }
 
+    //Buscamos el elemento y escribe el email pasado por parámetro
     public void setEmail(String email) {
         driver.findElement(emailField).sendKeys(email);
     }

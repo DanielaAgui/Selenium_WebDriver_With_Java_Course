@@ -22,6 +22,7 @@ public class HomePage {
         return new LoginPage(driver);
     }
 
+    //Métodos para todas las páginas web nuevas, pasando por parámetro el elemento para acceder a ellas
     public DropdownPage clickDropdown() {
         clickLink("Dropdown");
         return new DropdownPage(driver);

@@ -14,7 +14,7 @@ public class ConfirmAlertTest extends BaseTests {
         //Creamos una variable donde guardamos el texto obtenido de la alerta
         String text = alertsPage.getAlertText();
         alertsPage.dismissButton();
-        //Verificamos que el texto sea igual al esperado o envia mensaje de error
+        //Verificamos que el texto sea igual al esperado o envia mensaje de error si es incorrecto
         assertEquals(text, "I am a JS Confirm", "Alert texts is incorrect");
     }
 }

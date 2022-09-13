@@ -18,6 +18,7 @@ import utils.WindowManager;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 public class BaseTests {
 
@@ -37,7 +38,7 @@ public class BaseTests {
         driver.register(new EventReporter());
 
         //Proporciona un tiempo de espera entre cada paso de prueba
-        //driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS );
 
         //Volvemos a la página principal
         goHome();
@@ -61,7 +62,9 @@ public class BaseTests {
 
     //Se ejecuta después de terminar cada método
     @AfterMethod
-    public void recordFailure(ITestResult result) {
+    //Método para capturar imagenes de los test fallidos
+    public void failureScreenshot(ITestResult result) {
+        //Si el test es fallido obtiene el estado
         if (ITestResult.FAILURE == result.getStatus()) {
             //Creamos un objeto  que toma el Screenshot
             var camera = (TakesScreenshot) driver;
@@ -76,6 +79,19 @@ public class BaseTests {
         }
     }
 
+    @AfterMethod
+    //Método para capturar imagenes de los test exitosos
+    public void successScreenshot(ITestResult result) {
+        if (ITestResult.SUCCESS == result.getStatus()) {
+            var camera = (TakesScreenshot) driver;
+            File screenshot = camera.getScreenshotAs(OutputType.FILE);
+            try {
+                Files.move(screenshot, new File("resources/screenshots/" + result.getName()));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
     //Devuelve la nueva página
     public WindowManager getWindowManager() {
@@ -86,8 +102,9 @@ public class BaseTests {
     private ChromeOptions getChromeOptions() {
         //Creamos una objeto de la clase
         ChromeOptions options = new ChromeOptions();
-        //Elegimos la opción a realizar
-        options.addArguments("disable-infobars");
+        //Elegimos lo que queremos realizar y lo pasamos por parámetro
+        options.addArguments("disable-infobars"); //Quitamos los mensajes informativos de chrome
+        options.addArguments("--incognito"); //Ejecutamos en modo incógnito
         return options;
     }
 }

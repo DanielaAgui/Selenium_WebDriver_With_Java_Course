@@ -20,13 +20,13 @@ public class DropdownPage {
 
     //Creamos un método para seleccionar opciones
     public void selectFromDropdown(String option) {
-        //Al elemento dropdown encontrado, le damos en cualquier opción
+        //Al elemento dropdown encontrado, le damos la opción pasada por parámetro
         findDropdownElement().selectByVisibleText(option);
     }
 
-    //Método que devuelve una lista con los elementos disponibles para selección
+    //Método que devuelve una lista con los elementos disponibles para seleccionar
     public List<String> getSelectedOptions() {
-        //Encontramos los elementos y los obtenemos en una lista
+        //Encontramos los elementos y obtenemos una lista de ellos
         List<WebElement> selectedElements = findDropdownElement().getAllSelectedOptions();
         //Devolvemos una lista con el texto de los elementos
         return selectedElements.stream().map(e->e.getText()).collect(Collectors.toList());

@@ -17,6 +17,6 @@ public class ForgotPasswordTest extends BaseTests {
 
         ServerErrorPage serverErrorPage = forgotPasswordPage.clickRetrievePasswordButton();
 
-        //assertEquals("Internal Server Error", serverErrorPage.errorAlert().contains("Internal Server Error"));
+        assertEquals("Internal Server Error", serverErrorPage.errorAlert().contains("Internal Server Error"));
     }
 }

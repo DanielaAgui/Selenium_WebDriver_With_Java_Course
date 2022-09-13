@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;;
 public class NestedFramesPage {
 
     private WebDriver driver;
+    //Iframes en variables para utilizar el método switchTo()
     private String frameTop = "frame-top";
     private String frameLeft = "frame-left";
     private String frameBottom = "frame-bottom";
@@ -16,10 +17,11 @@ public class NestedFramesPage {
     }
 
     public void switchToParentFrame () {
-        //Para cambiar entre iframes y la página principal
+        //Para cambiar entre iframes y la página web principal
         driver.switchTo().defaultContent();
     }
 
+    //Métodos para cambiar entre iframes según su ubicación
     public void SwitchToFrameTop() {
         driver.switchTo().frame(frameTop);
     }

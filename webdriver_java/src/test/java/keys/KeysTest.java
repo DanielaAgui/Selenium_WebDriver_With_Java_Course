@@ -11,7 +11,7 @@ public class KeysTest extends BaseTests {
     @Test
     public void testBackspace() {
         var keyPage = homePage.clickKeyPresses();
-        //Escribe la letra "A" e incluye una tecla
+        //Pasamos el texto según parámetro
         keyPage.enterText("A" + Keys.BACK_SPACE);
         assertEquals(keyPage.getResult(), "You entered: BACK_SPACE");
     }
