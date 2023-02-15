@@ -36,13 +36,10 @@ public class BaseTests {
         driver = new EventFiringWebDriver(new ChromeDriver(getChromeOptions()));
         //Registramos el evento y la clase creada
         driver.register(new EventReporter());
-
         //Proporciona un tiempo de espera entre cada paso de prueba
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS );
-
         //Volvemos a la página principal
         goHome();
-
         //Instanciamos la página principal
         homePage = new HomePage(driver);
     }
